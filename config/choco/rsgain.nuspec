@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey
+uses a special version of NuGet.Core that allows us to do more than was initially possible. As such
+there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl,
+mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring
+tools or commands will error on those elements
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>rsgain</id>
+    <version>3.3</version>
+    <packageSourceUrl>https://github.com/complexlogic/rsgain</packageSourceUrl>
+    <owners>complexlogic</owners>
+
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>rsgain</title>
+    <authors>complexlogic</authors>
+    <projectUrl>https://github.com/complexlogic/rsgain</projectUrl>
+    <iconUrl>https://avatars.githubusercontent.com/u/95071366?v=4</iconUrl>
+    <copyright>2022</copyright>
+    <licenseUrl>https://github.com/complexlogic/rsgain/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/complexlogic/rsgain</projectSourceUrl>
+    <docsUrl>https://github.com/complexlogic/rsgain/blob/master/README.md</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/complexlogic/rsgain/issues</bugTrackerUrl>
+    <tags>rsgain replaygain music audio mp3 flac</tags>
+    <summary>A simple, but powerful ReplayGain 2.0 tagging utility</summary>
+    <description>
+      **rsgain** (**r**eally **s**imple **gain**) is a ReplayGain 2.0 command line utility for Windows, macOS, Linux, and BSD. rsgain applies loudness metadata tags to your files, while leaving the audio stream untouched. A ReplayGain-compatible player will dynamically adjust the volume of your tagged files during playback.
+
+      rsgain is designed with a "batteries included" philosophy, allowing a user to scan their entire music library without requiring external scripts or other tools. It aims to strike the perfect balance between power and simplicity by providing multiple user interfaces. See [Usage](#usage) for more information.
+
+      rsgain is the backend for the [MusicBrainz Picard](https://picard.musicbrainz.org/) ReplayGain 2.0 plugin. Users that are not comfortable with command line interfaces may prefer this method since the plugin provides a GUI frontend to rsgain. See [MusicBrainz Picard Plugin](#musicbrainz-picard-plugin) for more information.
+    </description>
+    <releaseNotes>
+      v3.3 (2023-04-23)
+      - New -I mode 'keep' detects the file's existing ID3v2 version, and preserves it
+      - Less disruptive to files, less prone to data loss as TagLib sometimes discards frames when converting between ID3v2 versions.
+      - Will be made the default mode in a future release
+      - Handle file extensions case insensitively when determining file type
+      - When removing ReplayGain tags from ID3 formats, also remove legacy RVAD and RVA2 ("Relative Volume Adjustment") frames which conflict with ReplayGain
+      - Fix segfault caused by unusual file durations
+      - Added -O 's' mode to write sep header to CSV output for Microsoft Excel compatibility.
+      - Mode argument for -O is optional to maintain backwards compatibility
+      - Windows: Search for Easy Mode presets in a default user directory similar to the macOS and Linux versions
+      - Windows: Upgrade to FFmpeg 6
+    </releaseNotes>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!--<dependencies>
+      <dependency id="" version="__MINIMUM_VERSION__" />
+      <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>-->
+    <!-- chocolatey-core.extension - https://community.chocolatey.org/packages/chocolatey-core.extension -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

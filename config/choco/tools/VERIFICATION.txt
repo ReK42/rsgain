@@ -1,0 +1,7 @@
+﻿
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+Source checksum and compiled package contents can be obtained from:
+https://github.com/complexlogic/rsgain/releases
