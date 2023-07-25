@@ -16,17 +16,15 @@ tools or commands will error on those elements
     <id>rsgain</id>
     <version>3.3</version>
     <packageSourceUrl>https://github.com/complexlogic/rsgain</packageSourceUrl>
-    <owners>complexlogic</owners>
-
+    <owners>ReK42</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
-    <!-- This section is about the software itself -->
     <title>rsgain</title>
     <authors>complexlogic</authors>
     <projectUrl>https://github.com/complexlogic/rsgain</projectUrl>
     <iconUrl>https://avatars.githubusercontent.com/u/95071366?v=4</iconUrl>
-    <copyright>2022</copyright>
+    <copyright>Copyright (c) 2014, Alessandro Ghedini v0.1-v0.6.8; Copyright (C) 2019, Matthias C. Hormann</copyright>
     <licenseUrl>https://github.com/complexlogic/rsgain/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/complexlogic/rsgain</projectSourceUrl>
@@ -68,9 +66,15 @@ tools or commands will error on those elements
     </dependencies>-->
     <!-- chocolatey-core.extension - https://community.chocolatey.org/packages/chocolatey-core.extension -->
 
-    <!--<provides>NOT YET IMPLEMENTED</provides>-->
-    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
-    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+    <!--<provides>
+      NOT YET IMPLEMENTED
+    </provides>-->
+    <!--<conflicts>
+      NOT YET IMPLEMENTED
+    </conflicts>-->
+    <!--<replaces>
+      NOT YET IMPLEMENTED
+    </replaces>-->
   </metadata>
   <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
